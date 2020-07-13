@@ -1,4 +1,4 @@
-public class MinionCaclulator {
+public class MinionCalculator {
     private final static int GENERATING_CYCLE = 2;
 
     private double timeBetweenActions;

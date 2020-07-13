@@ -22,28 +22,28 @@ public class MinionCalculatorUI {
         JOptionPane.showMessageDialog(null, "Invalid input!", "Error", JOptionPane.ERROR_MESSAGE);
     }
     public static void main(String[] args){
-        MinionCaclulator minionCaclulator = new MinionCaclulator();
+        MinionCalculator minionCalculator = new MinionCalculator();
 
         String timeBetweenActions = JOptionPane.showInputDialog("Time between actions");
         if(isDouble(timeBetweenActions)){
-            minionCaclulator.setTimeBetweenActions(Double.parseDouble(timeBetweenActions));
+            minionCalculator.setTimeBetweenActions(Double.parseDouble(timeBetweenActions));
         }else{
             invalidInput();
         }
         String minionsWorking = JOptionPane.showInputDialog("Minions working");
         if(isInt(minionsWorking)){
-            minionCaclulator.setMinionsWorking(Integer.parseInt(minionsWorking));
+            minionCalculator.setMinionsWorking(Integer.parseInt(minionsWorking));
         }else{
             invalidInput();
         }
         String pricePerItem = JOptionPane.showInputDialog("Price per item");
         if(isDouble(pricePerItem)){
-            minionCaclulator.setPricePerItem(Double.parseDouble(pricePerItem));
+            minionCalculator.setPricePerItem(Double.parseDouble(pricePerItem));
         }else{
             invalidInput();
         }
 
-        System.out.println(minionCaclulator.calculateProfitPerHour());
+        System.out.println(minionCalculator.calculateProfitPerHour());
 
 
 
@@ -66,10 +66,10 @@ public class MinionCalculatorUI {
         JLabel labelPricePerItem = new JLabel("Price per item: " + pricePerItem);
         labelPricePerItem.setForeground(Color.WHITE);
         labelPricePerItem.setAlignmentX(Component.CENTER_ALIGNMENT);
-        JLabel labelProfitPerHour = new JLabel("Projected profit per hour with current Minion setup: " + minionCaclulator.calculateProfitPerHour() + " coins.");
+        JLabel labelProfitPerHour = new JLabel("Projected profit per hour with current Minion setup: " + minionCalculator.calculateProfitPerHour() + " coins.");
         labelProfitPerHour.setForeground(Color.WHITE);
         labelProfitPerHour.setAlignmentX(Component.CENTER_ALIGNMENT);
-        JLabel labelProfitPerDay = new JLabel("Projected profit per day with current Minion setup: " + minionCaclulator.calculateProfitPerDay() + " coins.");
+        JLabel labelProfitPerDay = new JLabel("Projected profit per day with current Minion setup: " + minionCalculator.calculateProfitPerDay() + " coins.");
         labelProfitPerDay.setForeground(Color.WHITE);
         labelProfitPerDay.setAlignmentX(Component.CENTER_ALIGNMENT);
 
