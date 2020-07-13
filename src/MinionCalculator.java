@@ -1,5 +1,7 @@
 public class MinionCalculator {
     private final static int GENERATING_CYCLE = 2;
+    private final static int ONE_HOUR_IN_SECS = 60 * 60;
+    private final static int ONE_DAY_IN_SECS = 24 * ONE_HOUR_IN_SECS;
 
     private double timeBetweenActions;
     private int minionsWorking;
@@ -35,18 +37,19 @@ public class MinionCalculator {
         double timeForItem;
 
         timeForItem = timeBetweenActions * GENERATING_CYCLE;
-        itemsPerHour = 3600 / timeForItem * minionsWorking;
+        itemsPerHour = ONE_HOUR_IN_SECS / timeForItem * minionsWorking;
         profitPerHour = itemsPerHour * pricePerItem;
 
         return profitPerHour;
     }
+
     public double calculateProfitPerDay() {
         double profitPerDay;
         double itemsPerDay;
         double timeForItem;
 
         timeForItem = timeBetweenActions * GENERATING_CYCLE;
-        itemsPerDay = 86400 / timeForItem * minionsWorking;
+        itemsPerDay = ONE_DAY_IN_SECS / timeForItem * minionsWorking;
         profitPerDay = itemsPerDay * pricePerItem;
 
         return profitPerDay;
