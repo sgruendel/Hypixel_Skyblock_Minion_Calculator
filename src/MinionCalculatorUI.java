@@ -12,7 +12,6 @@ public class MinionCalculatorUI {
     }
     public static boolean isInt(String str){
         try {
-            Integer.parseInt(str);
             return true;
         }catch (NumberFormatException e){
             return false;
@@ -20,6 +19,7 @@ public class MinionCalculatorUI {
     }
     public static void invalidInput(){
         JOptionPane.showMessageDialog(null, "Invalid input!", "Error", JOptionPane.ERROR_MESSAGE);
+        System.exit(0);
     }
     public static void main(String[] args){
         MinionCalculator minionCalculator = new MinionCalculator();
@@ -42,10 +42,6 @@ public class MinionCalculatorUI {
         }else{
             invalidInput();
         }
-
-        System.out.println(minionCalculator.calculateProfitPerHour());
-
-
 
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
